@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <title>signal</title>
+
+    <style>
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#canvas-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+    </style>
+  </head>
+
+  <body>
+    <div id="canvas-container"></div>
+    <div id="plot-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/essentia.js@0.1.0/dist/essentia-wasm.web.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/essentia.js@0.1.0/dist/essentia.js-extractor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/essentia.js@0.1.0/dist/essentia.js-plot.js"></script>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <script type="module">
+import Signal from './src/signal.js';
+
+const canvasContainer = document.querySelector('#canvas-container');
+
+const signal = new Signal(canvasContainer);
+
+window.signal = signal;
+    </script>
+  </body>
+</html>
